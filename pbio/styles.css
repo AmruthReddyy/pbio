@@ -1,0 +1,234 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Optima', sans-serif;
+    background-color: #000; /* Website's general background is black */
+    color: #39FF14; /* General text color is neon green */
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000; /* Navigation bar is black */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FF00FF; /* Navigation buttons are neon magenta */
+    padding: 0 15px;
+    display: block;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+}
+
+/* Home Section with Background Image */
+#home {
+    background-image: url('https://i.pinimg.com/originals/5e/1b/43/5e1b43895a85cfa1afb9a51757014a59.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    transition: filter 0.3s ease-out;
+    will-change: filter;
+}
+
+.darken-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease-out;
+    will-change: background-color;
+    pointer-events: none;
+}
+
+.main-heading {
+    text-align: center; /* Center aligns the text */
+    padding-left: 20px; /* Keeps the original padding */
+    width: 100%; /* Ensures full width for proper centering */
+}
+
+.main-heading h1 {
+    font-size: 9em;
+    margin: 0;
+    margin-bottom: 70px; /* Adjust this value for spacing */
+    line-height: 1;
+    color: #00FFFF;
+    font-family:'Optima', sans-serif;
+}
+.main-heading p {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #39FF14; /* Adjust color if needed */
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section-heading {
+    font-family: 'Optima', sans-serif;
+    font-size: 4em;
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF; /* Reduced glow effect */
+}
+
+.about-content p {
+    font-family: 'Calibri', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.skills-wrapper {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.skill-box {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    min-width: 250px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #000000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.skill-name {
+    font-weight: bold;
+    display: block;
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Contact Section Styles */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-links a img {
+    width: 50px;
+    height: auto;
+}
+
+/* Glowing Text Effect for Headings */
+.glowing-text {
+    font-size: 3em;
+    color: #00FFFF;
+    text-shadow:
+        0 0 7px #00FFFF,
+        0 0 10px #00FFFF,
+        0 0 21px #00FFFF,
+        0 0 42px #00FFFF,
+        0 0 82px #00FFFF,
+        0 0 92px #00FFFF,
+        0 0 102px #00FFFF,
+        0 0 151px #00FFFF;
+}
+
+/* Experience Display Modal */
+.experience-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border: 2px solid #39FF14;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5);
+    text-align: center;
+    display: none;
+    z-index: 1500;
+    cursor: pointer;
+}
+/* -------------------------------------------------------------- */
+
+nav ul li a:hover {
+    color: #FFD700; /* Gold color on hover */
+    text-decoration: underline;
+}
+.skills-wrapper .skill-box:hover {
+    background-color: #202020; 
+    transform: scale(1.1); 
+}
+
+.about-content ul li {
+    font-size: 1.5em;
+    list-style-type: circle; 
+    color: #bababa; 
+}
+nav ul li:hover + li {
+    margin-left: 20px; /* Adds space after a hovered list item */
+}
+.about-content ul li + li {
+    color: #b3b2b1; /* Changes color of subsequent list items */
+
+}
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #00FFFF;
+    margin: 10px auto 0; /* Adds a line after section headings */
+}
+.about-content p::first-letter {
+    font-size: 200%; /* Enlarges the first letter */
+    color: #FF4500; /* Changes color of the first letter */
+}
+.about-content p::first-line {
+    font-weight: bold; /* Makes the first line bold */
+    color: #39FF14; /* Changes color of the first line */
+}
+::selection {
+    background: #FFD700; /* Yellow background */
+    color: #000000; /* Black text */
+}
